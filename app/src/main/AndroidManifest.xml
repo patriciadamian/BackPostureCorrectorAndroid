@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,11 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BackPostureCorrector">
         <activity android:name="com.example.backposturecorrector.MainActivity" />
-        <activity android:name="com.example.backposturecorrector.Register"></activity>
-        <activity android:name="com.example.backposturecorrector.RegisterError"></activity>
-        <activity android:name="com.example.backposturecorrector.LoginError"></activity>
-        <activity android:name="com.example.backposturecorrector.UserForm"></activity>
-        <activity android:name="com.example.backposturecorrector.Login">
+        <activity android:name="com.example.backposturecorrector.register.RegisterActivity" />
+        <activity android:name="com.example.backposturecorrector.register.RegisterError" />
+        <activity android:name="com.example.backposturecorrector.login.LoginErrorActivity" />
+        <activity android:name="com.example.backposturecorrector.UserForm" />
+        <activity android:name="com.example.backposturecorrector.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

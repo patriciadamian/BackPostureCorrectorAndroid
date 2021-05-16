@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="10dp"
     android:gravity="center"
-    tools:context="LoginError">
+    tools:context=".login.LoginErrorActivity">
 
     <TextView
         android:layout_width="wrap_content"

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="10dp"
     android:gravity="center"
-    tools:context="RegisterError">
+    tools:context=".register.RegisterError">
 
     <TextView
         android:layout_width="wrap_content"

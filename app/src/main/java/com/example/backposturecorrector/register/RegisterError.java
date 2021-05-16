@@ -1,4 +1,4 @@
-package com.example.backposturecorrector;
+package com.example.backposturecorrector.register;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,7 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class LoginError extends Activity implements View.OnClickListener {
+import com.example.backposturecorrector.R;
+import com.example.backposturecorrector.login.LoginActivity;
+import com.example.backposturecorrector.register.RegisterActivity;
+
+public class RegisterError extends Activity implements View.OnClickListener {
 
     TextView RegisterLink, LoginLink;
 
@@ -26,10 +30,10 @@ public class LoginError extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.RegisterLink:
-                startActivity(new Intent(this, Register.class));
+                startActivity(new Intent(this, RegisterActivity.class));
                 break;
             case R.id.LoginLink:
-                startActivity(new Intent(this, Login.class));
+                startActivity(new Intent(this, LoginActivity.class));
         }
     }
 }
