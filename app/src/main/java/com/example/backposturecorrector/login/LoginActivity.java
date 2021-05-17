@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.backposturecorrector.HashPasswordService;
 import com.example.backposturecorrector.R;
 import com.example.backposturecorrector.Session;
 import com.example.backposturecorrector.register.RegisterActivity;

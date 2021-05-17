@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.backposturecorrector.R;
 import com.example.backposturecorrector.client.ApiClient;
-import com.example.backposturecorrector.login.HashPasswordService;
+import com.example.backposturecorrector.HashPasswordService;
 import com.example.backposturecorrector.login.LoginActivity;
 
 import retrofit2.Call;

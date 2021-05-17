@@ -1,4 +1,4 @@
-package com.example.backposturecorrector.login;
+package com.example.backposturecorrector;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
