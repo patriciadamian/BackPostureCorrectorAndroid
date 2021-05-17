@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="10dp"
-        tools:context=".UserForm">
+        tools:context=".user.profile.UserFormActivity">
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
@@ -45,30 +45,33 @@
             android:id="@+id/editTextAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:layout_marginBottom="10dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Weight"
+            android:text="Weight in kg"
             android:textSize="18sp" />
 
         <EditText
             android:id="@+id/editTextWeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:layout_marginBottom="10dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Height"
+            android:text="Height in cm"
             android:textSize="18sp" />
 
         <EditText
             android:id="@+id/editTextHeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:layout_marginBottom="10dp" />
 
         <Button

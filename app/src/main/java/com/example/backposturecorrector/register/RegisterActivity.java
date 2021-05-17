@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.backposturecorrector.R;
 import com.example.backposturecorrector.client.ApiClient;
+import com.example.backposturecorrector.login.HashPasswordService;
 import com.example.backposturecorrector.login.LoginActivity;
 
 import retrofit2.Call;
@@ -46,7 +47,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 String firstName = editTextFirstName.getText().toString();
                 String lastName = editTextLastName.getText().toString();
                 String email = editTextEmail.getText().toString();
-                String password = editTextPassword.getText().toString();
+                String password = HashPasswordService.hash(editTextPassword.getText().toString());
                 Call<RegisterResponse> call = registerApi.register(new RegisterResponse(firstName, lastName, email, password));
 
                 call.enqueue(new Callback<RegisterResponse>() {

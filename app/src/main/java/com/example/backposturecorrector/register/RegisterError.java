@@ -8,22 +8,19 @@ import android.widget.TextView;
 
 import com.example.backposturecorrector.R;
 import com.example.backposturecorrector.login.LoginActivity;
-import com.example.backposturecorrector.register.RegisterActivity;
 
 public class RegisterError extends Activity implements View.OnClickListener {
-
-    TextView RegisterLink, LoginLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loginerror);
 
-        RegisterLink = (TextView) findViewById(R.id.RegisterLink);
-        RegisterLink.setOnClickListener(this);
+        TextView registerLink = findViewById(R.id.RegisterLink);
+        registerLink.setOnClickListener(this);
 
-        LoginLink = (TextView) findViewById(R.id.LoginLink);
-        LoginLink.setOnClickListener(this);
+        TextView loginLink = findViewById(R.id.LoginLink);
+        loginLink.setOnClickListener(this);
     }
 
     @Override
