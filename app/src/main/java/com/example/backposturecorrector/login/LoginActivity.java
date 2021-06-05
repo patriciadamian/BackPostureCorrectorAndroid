@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.backposturecorrector.HashPasswordService;
 import com.example.backposturecorrector.R;
 import com.example.backposturecorrector.Session;
+import com.example.backposturecorrector.TestActivity;
+import com.example.backposturecorrector.calibration.RightHandCalibrationActivity;
 import com.example.backposturecorrector.register.RegisterActivity;
 import com.example.backposturecorrector.user.profile.UserFormActivity;
 import com.example.backposturecorrector.client.ApiClient;
@@ -21,6 +23,9 @@ import com.example.backposturecorrector.client.ApiClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.example.backposturecorrector.Session.IS_USER_PROFILE_COMPLETE;
+import static com.example.backposturecorrector.Session.TOKEN;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -65,9 +70,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 int duration = Toast.LENGTH_SHORT;
                                 Toast toast = Toast.makeText(context, text, duration);
                                 LoginResponse loginResponse = response.body();
-                                Session.TOKEN = loginResponse.getToken();
+                                TOKEN = loginResponse.getToken();
                                 toast.show();
-                                startActivity(new Intent(context, UserFormActivity.class));
+                                if (IS_USER_PROFILE_COMPLETE) {
+                                    startActivity(new Intent(context, TestActivity.class));
+                                } else {
+                                    startActivity(new Intent(context, UserFormActivity.class));
+                                }
                             } else {
                                 startActivity(new Intent(context, LoginErrorActivity.class));
                             }

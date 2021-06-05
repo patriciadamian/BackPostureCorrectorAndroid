@@ -10,15 +10,18 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.backposturecorrector.MainActivity;
 import com.example.backposturecorrector.R;
 import com.example.backposturecorrector.Session;
+import com.example.backposturecorrector.TestActivity;
+import com.example.backposturecorrector.calibration.StartCalibrationActivity;
 import com.example.backposturecorrector.client.ApiClient;
 import com.example.backposturecorrector.login.LoginActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.example.backposturecorrector.Session.IS_USER_PROFILE_COMPLETE;
 
 public class UserFormActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -59,7 +62,12 @@ public class UserFormActivity extends AppCompatActivity implements View.OnClickL
                             int duration = Toast.LENGTH_SHORT;
                             Toast toast = Toast.makeText(context, text, duration);
                             toast.show();
-                            startActivity(new Intent(context, MainActivity.class));
+                            IS_USER_PROFILE_COMPLETE = true;
+                            if (Session.IS_CALIBRATION_COMPLETE) {
+                                startActivity(new Intent(context, TestActivity.class));
+                            } else {
+                                startActivity(new Intent(context, StartCalibrationActivity.class));
+                            }
                         } else {
                             startActivity(new Intent(context, LoginActivity.class));
                         }

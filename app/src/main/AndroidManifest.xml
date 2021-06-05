@@ -18,6 +18,12 @@
         <activity android:name="com.example.backposturecorrector.register.RegisterError" />
         <activity android:name="com.example.backposturecorrector.login.LoginErrorActivity" />
         <activity android:name="com.example.backposturecorrector.user.profile.UserFormActivity" />
+        <activity android:name="com.example.backposturecorrector.calibration.StartCalibrationActivity" />
+        <activity android:name="com.example.backposturecorrector.calibration.RightHandCalibrationActivity" />
+        <activity android:name="com.example.backposturecorrector.calibration.LeftHandCalibrationActivity" />
+        <activity android:name="com.example.backposturecorrector.calibration.StraightBackCalibrationActivity" />
+        <activity android:name="com.example.backposturecorrector.calibration.EndCalibrationActivity" />
+        <activity android:name="com.example.backposturecorrector.TestActivity" />
         <activity android:name="com.example.backposturecorrector.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
