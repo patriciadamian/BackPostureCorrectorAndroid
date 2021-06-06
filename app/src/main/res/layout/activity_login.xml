@@ -21,9 +21,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Welcome to BackPosture Corrector Application!\n Please log in or register:"
+                android:text="Welcome to BackPosture Corrector Application!\nPlease log in or register:"
                 android:textColor="#8BC34A"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
