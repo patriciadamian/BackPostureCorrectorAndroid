@@ -8,10 +8,11 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.backposturecorrector.R;
-import com.example.backposturecorrector.TestActivity;
+import com.example.backposturecorrector.statistics.AnnualStatisticsActivity;
+import com.example.backposturecorrector.statistics.WeeklyStatisticsActivity;
 
 public class EndCalibrationActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button homeButton;
+    private Button homeButton, annualButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +21,11 @@ public class EndCalibrationActivity extends AppCompatActivity implements View.On
 
         homeButton = findViewById(R.id.buttonHome);
         homeButton.setOnClickListener(v ->
-                startActivity(new Intent(getApplicationContext(), TestActivity.class)));
+                startActivity(new Intent(getApplicationContext(), WeeklyStatisticsActivity.class)));
 
+        annualButton = findViewById(R.id.buttonAnnualStatistics);
+        annualButton.setOnClickListener(v ->
+                startActivity(new Intent(getApplicationContext(), AnnualStatisticsActivity.class)));
     }
 
     @Override

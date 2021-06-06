@@ -14,17 +14,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.backposturecorrector.HashPasswordService;
 import com.example.backposturecorrector.R;
 import com.example.backposturecorrector.Session;
-import com.example.backposturecorrector.TestActivity;
-import com.example.backposturecorrector.calibration.RightHandCalibrationActivity;
-import com.example.backposturecorrector.register.RegisterActivity;
-import com.example.backposturecorrector.user.profile.UserFormActivity;
+import com.example.backposturecorrector.calibration.EndCalibrationActivity;
 import com.example.backposturecorrector.client.ApiClient;
+import com.example.backposturecorrector.register.RegisterActivity;
+import com.example.backposturecorrector.statistics.AnnualStatisticsActivity;
+import com.example.backposturecorrector.statistics.WeeklyStatisticsActivity;
+import com.example.backposturecorrector.user.profile.UserFormActivity;
+import com.example.backposturecorrector.user.profile.UserProfileApi;
+import com.example.backposturecorrector.user.profile.UserProfileResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.example.backposturecorrector.Session.IS_USER_PROFILE_COMPLETE;
 import static com.example.backposturecorrector.Session.TOKEN;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -72,11 +74,28 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 LoginResponse loginResponse = response.body();
                                 TOKEN = loginResponse.getToken();
                                 toast.show();
-                                if (IS_USER_PROFILE_COMPLETE) {
-                                    startActivity(new Intent(context, TestActivity.class));
-                                } else {
-                                    startActivity(new Intent(context, UserFormActivity.class));
-                                }
+
+                                UserProfileApi userProfileApi = ApiClient.getClient().create(UserProfileApi.class);
+                                Call<UserProfileResponse> callGetUserById = userProfileApi.userById(TOKEN, Session.getId());
+
+                                callGetUserById.enqueue(new Callback<UserProfileResponse>() {
+                                    @Override
+                                    public void onResponse(Call<UserProfileResponse> call, Response<UserProfileResponse> response) {
+                                        if (response.isSuccessful()) {
+                                            UserProfileResponse userProfileResponse = response.body();
+                                            if (userProfileResponse.getAge() == 0 && userProfileResponse.getHeight() == 0 && userProfileResponse.getWeight() == 0) {
+                                                startActivity(new Intent(context, UserFormActivity.class));
+                                            } else {
+                                                startActivity(new Intent(context, EndCalibrationActivity.class));
+                                            }
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onFailure(Call<UserProfileResponse> call, Throwable t) {
+                                        startActivity(new Intent(context, LoginErrorActivity.class));
+                                    }
+                                });
                             } else {
                                 startActivity(new Intent(context, LoginErrorActivity.class));
                             }

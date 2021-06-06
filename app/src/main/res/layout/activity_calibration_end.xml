@@ -45,6 +45,14 @@
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="159dp"
             tools:layout_editor_absoluteY="618dp" />
+        <Button
+            android:id="@+id/buttonAnnualStatistics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Annual"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="159dp"
+            tools:layout_editor_absoluteY="618dp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

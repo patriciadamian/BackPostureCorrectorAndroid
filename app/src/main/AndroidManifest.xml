@@ -23,6 +23,8 @@
         <activity android:name="com.example.backposturecorrector.calibration.LeftHandCalibrationActivity" />
         <activity android:name="com.example.backposturecorrector.calibration.StraightBackCalibrationActivity" />
         <activity android:name="com.example.backposturecorrector.calibration.EndCalibrationActivity" />
+        <activity android:name="com.example.backposturecorrector.statistics.WeeklyStatisticsActivity" />
+        <activity android:name="com.example.backposturecorrector.statistics.AnnualStatisticsActivity" />
         <activity android:name="com.example.backposturecorrector.TestActivity" />
         <activity android:name="com.example.backposturecorrector.login.LoginActivity">
             <intent-filter>

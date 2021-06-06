@@ -28,4 +28,16 @@ public class UserProfileResponse {
         this.height = height;
         this.weight = weight;
     }
+
+    public short getAge() {
+        return age;
+    }
+
+    public short getHeight() {
+        return height;
+    }
+
+    public short getWeight() {
+        return weight;
+    }
 }
