@@ -20,7 +20,7 @@ public class StartCalibrationActivity extends AppCompatActivity implements View.
 
         startButton = findViewById(R.id.buttonStart);
         startButton.setOnClickListener(v ->
-                startActivity(new Intent(getApplicationContext(), RightHandCalibrationActivity.class)));
+                startActivity(new Intent(getApplicationContext(), StraightBackCalibrationActivity.class)));
 
     }
 

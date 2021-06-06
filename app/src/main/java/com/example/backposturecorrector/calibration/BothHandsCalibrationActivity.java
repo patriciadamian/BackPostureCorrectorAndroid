@@ -11,25 +11,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.backposturecorrector.R;
 
-import static com.example.backposturecorrector.Session.IS_CALIBRATION_COMPLETE;
-
-public class StraightBackCalibrationActivity extends AppCompatActivity implements View.OnClickListener {
-
+public class BothHandsCalibrationActivity extends AppCompatActivity implements View.OnClickListener {
     private ProgressBar progressBar;
-    private Button nextButton;
+    private Button doneButton;
     private Handler mHandler;
     private int progressInt = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calibration_straight);
+        setContentView(R.layout.activity_calibration_both);
 
-        nextButton = findViewById(R.id.buttonNext);
-        nextButton.setOnClickListener(v -> {
-            IS_CALIBRATION_COMPLETE = true;
-            startActivity(new Intent(getApplicationContext(), RightHandCalibrationActivity.class));
-        });
+        doneButton = findViewById(R.id.buttonDone);
+        doneButton.setOnClickListener(v ->
+                startActivity(new Intent(getApplicationContext(), EndCalibrationActivity.class)));
 
         progressBar = findViewById(R.id.progressBar);
         progressBar.setProgress(0);

@@ -23,9 +23,9 @@ public class LeftHandCalibrationActivity extends AppCompatActivity implements Vi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calibration_left);
 
-        nextButton = findViewById(R.id.buttonNextLeft);
+        nextButton = findViewById(R.id.buttonDone);
         nextButton.setOnClickListener(v ->
-                startActivity(new Intent(getApplicationContext(), StraightBackCalibrationActivity.class)));
+                startActivity(new Intent(getApplicationContext(), BothHandsCalibrationActivity.class)));
 
         progressBar = findViewById(R.id.progressBar);
         progressBar.setProgress(0);
