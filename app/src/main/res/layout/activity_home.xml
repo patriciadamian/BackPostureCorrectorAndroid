@@ -12,15 +12,15 @@
         android:gravity="center"
         android:orientation="vertical"
         android:padding="40dp"
-        tools:context=".calibration.EndCalibrationActivity">
+        tools:context=".HomeActivity">
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="290dp"
-            android:layout_height="106dp"
+            android:layout_width="296dp"
+            android:layout_height="81dp"
             android:layout_gravity="center"
+            android:text="Welcome! \n We hope your back is doing well"
             android:textAlignment="center"
-            android:text="Congratulations!!! \n Calibration process is DONE"
             android:textColor="#8BC34A"
             android:textSize="18dp"
             android:textStyle="bold"
@@ -32,7 +32,7 @@
             android:id="@+id/imageView"
             android:layout_width="278dp"
             android:layout_height="221dp"
-            app:srcCompat="@drawable/end_calibration"
+            app:srcCompat="@drawable/home2"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="66dp"
             tools:layout_editor_absoluteY="188dp" />

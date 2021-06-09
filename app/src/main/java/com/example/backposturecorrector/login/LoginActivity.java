@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.backposturecorrector.HashPasswordService;
+import com.example.backposturecorrector.HomeActivity;
 import com.example.backposturecorrector.R;
 import com.example.backposturecorrector.Session;
 import com.example.backposturecorrector.calibration.EndCalibrationActivity;
@@ -86,7 +87,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                             if (userProfileResponse.getAge() == 0 && userProfileResponse.getHeight() == 0 && userProfileResponse.getWeight() == 0) {
                                                 startActivity(new Intent(context, UserFormActivity.class));
                                             } else {
-                                                startActivity(new Intent(context, EndCalibrationActivity.class));
+                                                startActivity(new Intent(context, HomeActivity.class));
                                             }
                                         }
                                     }

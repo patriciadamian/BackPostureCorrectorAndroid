@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.backposturecorrector.R;
 import com.example.backposturecorrector.Session;
-import com.example.backposturecorrector.TestActivity;
+import com.example.backposturecorrector.HomeActivity;
 import com.example.backposturecorrector.calibration.StartCalibrationActivity;
 import com.example.backposturecorrector.client.ApiClient;
 import com.example.backposturecorrector.login.LoginActivity;
@@ -64,7 +64,7 @@ public class UserFormActivity extends AppCompatActivity implements View.OnClickL
                             toast.show();
                             IS_USER_PROFILE_COMPLETE = true;
                             if (Session.IS_CALIBRATION_COMPLETE) {
-                                startActivity(new Intent(context, TestActivity.class));
+                                startActivity(new Intent(context, HomeActivity.class));
                             } else {
                                 startActivity(new Intent(context, StartCalibrationActivity.class));
                             }

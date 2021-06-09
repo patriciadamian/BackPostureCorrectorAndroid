@@ -1,23 +1,24 @@
-package com.example.backposturecorrector.calibration;
+package com.example.backposturecorrector;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.backposturecorrector.R;
 import com.example.backposturecorrector.statistics.AnnualStatisticsActivity;
 import com.example.backposturecorrector.statistics.WeeklyStatisticsActivity;
 
-public class EndCalibrationActivity extends AppCompatActivity implements View.OnClickListener {
+public class HomeActivity extends AppCompatActivity {
+
     private Button weeklyButton, annualButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calibration_end);
+        setContentView(R.layout.activity_home);
 
         weeklyButton = findViewById(R.id.buttonHome);
         weeklyButton.setOnClickListener(v ->
@@ -26,10 +27,5 @@ public class EndCalibrationActivity extends AppCompatActivity implements View.On
         annualButton = findViewById(R.id.buttonAnnualStatistics);
         annualButton.setOnClickListener(v ->
                 startActivity(new Intent(getApplicationContext(), AnnualStatisticsActivity.class)));
-    }
-
-    @Override
-    public void onClick(View view) {
-
     }
 }

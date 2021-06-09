@@ -26,7 +26,7 @@
         <activity android:name="com.example.backposturecorrector.calibration.EndCalibrationActivity" />
         <activity android:name="com.example.backposturecorrector.statistics.WeeklyStatisticsActivity" />
         <activity android:name="com.example.backposturecorrector.statistics.AnnualStatisticsActivity" />
-        <activity android:name="com.example.backposturecorrector.TestActivity" />
+        <activity android:name="com.example.backposturecorrector.HomeActivity" />
         <activity android:name="com.example.backposturecorrector.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
