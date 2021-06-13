@@ -5,6 +5,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface StatisticsApi {
@@ -14,4 +15,7 @@ public interface StatisticsApi {
 
     @GET("statistics/year/{id}")
     Call<List<AnnualStatisticsResponse>> getAnnualStatistics(@Header("Authorization") String auth, @Path("id") long id);
+
+    @POST("statistics/{id}")
+    Call<AlertResponse> saveAlert(@Header("Authorization") String auth, @Path("id") long id);
 }

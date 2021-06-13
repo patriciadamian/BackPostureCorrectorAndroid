@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             OutputStream outputStream = btSocket.getOutputStream();
-            outputStream.write("ON".getBytes());
+            outputStream.write("LOOP".getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
             String message = "";
             //for (int i = 0; i < 200; i++) {
-            while (true) {
+            while (inputStream.available() > 0) {
 
                 //while (true) {
                 //if (inputStream.available() > 0) {
@@ -84,12 +84,12 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try {
-            btSocket.close();
-            System.out.println(btSocket.isConnected());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+////            btSocket.close();
+//            System.out.println(btSocket.isConnected());
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
 
     }

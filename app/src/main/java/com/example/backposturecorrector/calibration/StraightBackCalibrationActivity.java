@@ -10,6 +10,7 @@ import android.widget.ProgressBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.backposturecorrector.R;
+import com.example.backposturecorrector.bluetooth.BluetoothConnector;
 
 import static com.example.backposturecorrector.Session.IS_CALIBRATION_COMPLETE;
 
@@ -27,6 +28,9 @@ public class StraightBackCalibrationActivity extends AppCompatActivity implement
 
         nextButton = findViewById(R.id.buttonNext);
         nextButton.setOnClickListener(v -> {
+
+            BluetoothConnector.sendMessage("RIGHT");
+
             IS_CALIBRATION_COMPLETE = true;
             startActivity(new Intent(getApplicationContext(), RightHandCalibrationActivity.class));
         });

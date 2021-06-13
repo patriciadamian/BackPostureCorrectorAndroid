@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.backposturecorrector.R;
+import com.example.backposturecorrector.bluetooth.BluetoothConnector;
 
 
 public class StartCalibrationActivity extends AppCompatActivity implements View.OnClickListener {
@@ -19,8 +20,14 @@ public class StartCalibrationActivity extends AppCompatActivity implements View.
         setContentView(R.layout.activity_calibration_start);
 
         startButton = findViewById(R.id.buttonStart);
-        startButton.setOnClickListener(v ->
-                startActivity(new Intent(getApplicationContext(), StraightBackCalibrationActivity.class)));
+        startButton.setOnClickListener(v -> {
+
+            BluetoothConnector.sendMessage("STRAIGHT");
+
+            startActivity(new Intent(getApplicationContext(), StraightBackCalibrationActivity.class));
+
+        });
+
 
     }
 

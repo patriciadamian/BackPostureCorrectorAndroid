@@ -10,6 +10,7 @@ import android.widget.ProgressBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.backposturecorrector.R;
+import com.example.backposturecorrector.bluetooth.BluetoothConnector;
 
 public class RightHandCalibrationActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -24,8 +25,12 @@ public class RightHandCalibrationActivity extends AppCompatActivity implements V
         setContentView(R.layout.activity_calibration_right);
 
         nextButton = findViewById(R.id.buttonNextRight);
-        nextButton.setOnClickListener(v ->
-                startActivity(new Intent(getApplicationContext(), LeftHandCalibrationActivity.class)));
+        nextButton.setOnClickListener(v -> {
+
+            BluetoothConnector.sendMessage("LEFT");
+
+            startActivity(new Intent(getApplicationContext(), LeftHandCalibrationActivity.class));
+        });
 
         progressBar = findViewById(R.id.progressBar);
         progressBar.setProgress(0);
